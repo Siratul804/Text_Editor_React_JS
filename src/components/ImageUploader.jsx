@@ -14,11 +14,15 @@ const ImageUploader = ({ onImageUpload }) => {
       const formData = new FormData();
       formData.append("image", selectedFile);
 
+      // console.log(selectedFile);
+
       const response = await axios.post(
         "YOUR_REMOTE_SERVER_UPLOAD_ENDPOINT",
         formData
       );
       const imageUrl = response.data.imageUrl;
+
+      console.log(onImageUpload);
 
       onImageUpload(imageUrl);
     } catch (error) {
@@ -28,11 +32,7 @@ const ImageUploader = ({ onImageUpload }) => {
 
   return (
     <div>
-      <input
-        type="file"
-        onChange={handleFileChange}
-        style={{ display: "none" }}
-      />
+      <input type="file" onChange={handleFileChange} />
       <br />
       <button
         onClick={handleUpload}
