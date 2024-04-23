@@ -1,10 +1,10 @@
-import TextEditor from "./components/TextEditor";
+import Dash from "./pages/Dash";
 
 const App = () => {
   return (
-    <div>
-      <TextEditor />
-    </div>
+    <>
+      <Dash />
+    </>
   );
 };
 
